@@ -1,0 +1,26 @@
+
+
+<section id="map"  >
+	<div
+		class="map-canvas"
+		ui-map="model.myMap"
+		ui-options="mapOptions"
+ ></div>
+  
+</section>
+<section class="container home-container">
+	<article>
+		<div class="five columns" class="biz-container">
+		    <ul ng-repeat="(key, business) in business">
+		    	<li ng-hide="!business.name"><h4>{{business.name}}</h4></li>
+		    	<li ng-hide="!business.description">{{business.description}}</li>
+		    	<li ng-show="business.address">{{business.address}}</li>
+		    	<li ng-hide="!business.city" class="city">{{business.city}}</li>
+		    	<li ng-hide="!business.state" class="state">{{business.state}}</li>
+		    	<li ng-hide="!business.phone">{{business.phone}}</li>
+		    	<li ng-hide="!business.email"><a  href="mailto:{{business.email}}?subject=Inquiry from Sou">Email</a></li>
+		    	<li ng-hide="!business.url"><a href="http://{{business.url}}" target="_blank">Website</a></li>
+		    </ul>
+		</div>
+	</article>
+</section>

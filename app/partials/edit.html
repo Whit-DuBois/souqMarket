@@ -1,0 +1,46 @@
+<section class="container edit-container">
+	<article>
+		<h3>Add Business</h1>
+		<form class="six columns">
+			<label>Business Name</label>
+			<input type="text" data-ng-model="newBusiness.name" placeholder="">
+
+			<label>Address</label>
+			<input type="text" data-ng-model="newBusiness.address" name="bizAddress" placeholder="123 Main Street">
+
+			<label>City</label>
+			<input type="text" data-ng-model="newBusiness.city" name="bizCity" placeholder="Town">
+
+			<label>State</label>
+			<input type="text" data-ng-model="newBusiness.state" name="bizState" placeholder="IL">
+
+			<label>Phone Number</label>
+			<input type="text" data-ng-model="newBusiness.phone" name="bizPhone" placeholder="XXXXXXXXX">
+
+			<label>Email</label>
+			<input type="email" data-ng-model="newBusiness.email" name="bizEmail" placeholder="xxx@yoursite.com">
+
+			<label>Website</label>
+			<input type="text" data-ng-model="newBusiness.url" name="bizUrl" placeholder="www.yoursite.com">
+
+			<label>Description</label>
+			<textarea data-ng-model="newBusiness.description" name="bizDescription" placeholder=""></textarea>
+
+			<button type="submit" ng-click="addBusiness()">Add New Business</button>
+		</form>
+		<div class="five columns">
+		    <ul class="biz-container" ng-repeat="(key, business) in business">
+		    	<li><h4>{{business.$id}}</h4></li>
+		    	<li ng-hide="!business.name"><h4>{{business.name}}</h4></li>
+		    	<li ng-hide="!business.description">{{business.description}}</li>
+		    	<li ng-show="business.address">{{business.address}}</li>
+		    	<li ng-hide="!business.city" class="city">{{business.city}}</li>
+		    	<li ng-hide="!business.state" class="state">{{business.state}}</li>
+		    	<li ng-hide="!business.phone">{{business.phone}}</li>
+		    	<li ng-hide="!business.email"><a  href="mailto:{{business.email}}?subject=Inquiry from Sou">Email</a></li>
+		    	<li ng-hide="!business.url"><a href="http://{{business.url}}" target="_blank">Website</a></li>
+		    	<button class="close" ng-click="deleteItem(key)">X</button>
+		    </ul>
+		</div>
+	</article>
+</section>

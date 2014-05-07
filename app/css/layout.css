@@ -1,0 +1,100 @@
+/* #Site Styles
+================================================== */
+body{
+	font-size: 15px;
+}
+ul{
+	margin: 0;
+}
+li{
+	margin: 3px;
+}
+.biz-container ul li.city{
+	display: inline-block;
+}
+.biz-container  ul li.state{
+	display: inline-block;
+}
+button.close{
+	font-size: 10px;
+	padding: 0px 3px;
+}
+.main-header{
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.main-header h1{
+	display: inline-block;
+}
+.main-header nav{
+	margin: 29px 0 0 0;
+	display: inline-block;
+	float: right;
+}
+.main-header ul li{
+	display: inline;
+	padding-left: 15px;
+}
+
+.angular-google-map-container { height: 400px; }
+
+/* #Page Styles
+================================================== */
+/*HOME*/
+.map-canvas { height: 500px; }
+
+.home-container div.columns{
+	margin: 0;
+}
+.home-container #map-div{
+	height: 500px;
+	width: auto;
+	background-color: red;
+	opacity: .3;
+	margin: 0 0 40px 0;
+}
+.home-container ul{
+	margin-bottom: 20px;
+}
+
+/*EDIT*/
+.edit-container{
+
+}
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/
