@@ -2,13 +2,37 @@
 
 var myControllers = angular.module('myControllers', ['myServices', 'ngRoute', 'ui.map', 'ui.event']);
 
-	myControllers.controller('homeCtrl', ['$scope', 'businessAPI',
-		function($scope, businessAPI, $firebaseAuth) {
+	myControllers.controller('homeCtrl', ['$scope', 'businessAPI', '$firebase', '$firebaseSimpleLogin',
+		function($scope, businessAPI, $firebase, $FirebaseSimpleLogin) {
 
 			// AUTHENTICATION
-			var ref = new Firebase(URL);
-			$scope.auth = $firebaseAuth(usersRef);
+			var chatRef = new Firebase('https://souq-market.firebaseio.com/users');
+	        var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+	            if (error) {
+	                console.log(error);
+	            } else if (user) {
+	                console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+	            } else {
+	                console.log('Not logged in')
+	            }
+	        });
 
+	        $scope.fbLogon = function(){
+	        	auth.login('facebook');
+	    	}
+
+	    	$scope.logout = function(){
+	    		$scope.logout();
+	    	}
+
+	        $scope.createUser = function(){
+	        	console.log('createUser Clicked');
+		        auth.createUser(email, password, function(error, user) {
+		            if (!error) {
+		                console.log('User Id: ' + user.id + ', Email: ' + user.email);
+		            }
+		        });
+		    }
 
 			$scope.business = businessAPI;
 			console.log('homeCtrl');
@@ -67,9 +91,12 @@ var myControllers = angular.module('myControllers', ['myServices', 'ngRoute', 'u
 			}
 
 			$scope.deleteItem = function(id){
-				
-				var itemRef = new Firebase("https://souq-market.firebaseio.com/business" + '/' + id);
-				itemRef.remove();
+				var result = confirm('Are you sure you want to delete?');
+
+				if (result = true){
+					var itemRef = new Firebase("https://souq-market.firebaseio.com/business" + '/' + id);
+					itemRef.remove();
+				}
 			}
 
 			console.log('editCtrl');

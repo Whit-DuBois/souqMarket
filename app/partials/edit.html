@@ -29,12 +29,11 @@
 			<button type="submit" ng-click="addBusiness()">Add New Business</button>
 		</form>
 		<div class="five columns">
-		    <ul class="biz-container" ng-repeat="(key, business) in business">
-		    	<li><h4>{{business.$id}}</h4></li>
+		    <ul ng-repeat="(key, business) in business" class="biz-container">
 		    	<li ng-hide="!business.name"><h4>{{business.name}}</h4></li>
 		    	<li ng-hide="!business.description">{{business.description}}</li>
 		    	<li ng-show="business.address">{{business.address}}</li>
-		    	<li ng-hide="!business.city" class="city">{{business.city}}</li>
+		    	<li ng-hide="!business.city" class="city">{{business.city}},</li>
 		    	<li ng-hide="!business.state" class="state">{{business.state}}</li>
 		    	<li ng-hide="!business.phone">{{business.phone}}</li>
 		    	<li ng-hide="!business.email"><a  href="mailto:{{business.email}}?subject=Inquiry from Sou">Email</a></li>

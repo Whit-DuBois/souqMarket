@@ -35,13 +35,15 @@ button.close{
 	display: inline;
 	padding-left: 15px;
 }
-
-.angular-google-map-container { height: 400px; }
+.biz-container .city, .biz-container .state{
+	display: inline-block;
+}
 
 /* #Page Styles
 ================================================== */
 /*HOME*/
 .map-canvas { height: 500px; }
+.angular-google-map-container { height: 500px; }
 
 .home-container div.columns{
 	margin: 0;

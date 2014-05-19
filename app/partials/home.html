@@ -1,21 +1,28 @@
-
-
 <section id="map"  >
-	<div
-		class="map-canvas"
-		ui-map="model.myMap"
-		ui-options="mapOptions"
- ></div>
-  
+	<div class="map-canvas" ui-map="model.myMap" ui-options="mapOptions"></div>
 </section>
+
+<section class="user-login">
+	<form class="six columns">
+			<label>Username</label>
+			<input type="email" data-ng-model="newUser.email" placeholder="">
+
+			<label>Password</label>
+			<input type="password" data-ng-model="newUser.password">
+
+			<button type="submit" ng-click="createUser()">Create User</button>
+		</form>
+</section>
+
 <section class="container home-container">
+<li><button ng-click="doLogin()">Login</button></li>
 	<article>
-		<div class="five columns" class="biz-container">
-		    <ul ng-repeat="(key, business) in business">
+		<div class="five columns">
+		    <ul ng-repeat="(key, business) in business" class="biz-container">
 		    	<li ng-hide="!business.name"><h4>{{business.name}}</h4></li>
 		    	<li ng-hide="!business.description">{{business.description}}</li>
 		    	<li ng-show="business.address">{{business.address}}</li>
-		    	<li ng-hide="!business.city" class="city">{{business.city}}</li>
+		    	<li ng-hide="!business.city" class="city">{{business.city}},</li>
 		    	<li ng-hide="!business.state" class="state">{{business.state}}</li>
 		    	<li ng-hide="!business.phone">{{business.phone}}</li>
 		    	<li ng-hide="!business.email"><a  href="mailto:{{business.email}}?subject=Inquiry from Sou">Email</a></li>
